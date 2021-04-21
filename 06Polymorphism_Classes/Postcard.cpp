@@ -3,7 +3,7 @@
 const double Postcard::STARTING_COST = 0.15;
 const int Postcard::DAILY_TRAVEL = 10;
 
-Postcard::Postcard() {
+Postcard::Postcard() : Parcel(){
 	mMessage = "";
 }
 

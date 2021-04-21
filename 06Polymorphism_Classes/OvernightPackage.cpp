@@ -6,7 +6,7 @@ const int OvernightPackage::LONG_DISTANCE_TIME = 2;
 const int OvernightPackage::SHORT_DISTANCE_TIME = 1;
 const int OvernightPackage::PACKAGE_SIZE_DIVIDE = 1000;
 
-OvernightPackage::OvernightPackage() {
+OvernightPackage::OvernightPackage() : Parcel(){
 	mVolume = 0;
 	mOriginalCost = 0;
 }
