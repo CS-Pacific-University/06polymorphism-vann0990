@@ -14,23 +14,23 @@ Parcel::Parcel() {
 }
 
 void Parcel::setCost(double cost) {
-
+	mCost = cost;
 }
 
 void Parcel::setTravelTime(double travelTime) {
-
+	mTravelTime = travelTime;
 }
 
 double Parcel::getWeight() {
-
+	return mWeight;
 }
 
 double Parcel::getDistance() {
-
+	return mTravelDistance;
 }
 
 double Parcel::getCost() {
-
+	return mCost;
 }
 
 void Parcel::addInsurance() {
