@@ -25,6 +25,7 @@ private:
 	static const int LONG_DISTANCE_TIME;
 	static const int SHORT_DISTANCE_TIME;
 	static const int PACKAGE_SIZE_DIVIDE;
+	static const int TRAVEL_TIME_DIVIDE;
 	double mVolume;
 	double mOriginalCost;
 };

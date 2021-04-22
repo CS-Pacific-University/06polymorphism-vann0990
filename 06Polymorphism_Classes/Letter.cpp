@@ -20,6 +20,8 @@ void Letter::deliverItem(ostream& rcOut) {
 
 void Letter::read(istream& rcIn) {
 	Parcel::read(rcIn);
+	Parcel::setCost(getWeight() * COST_PER_OUNCE);
+	Parcel::setTravelTime(getDistance() / DAILY_TRAVEL);
 }
 
 void Letter::print(ostream& rcOut) {

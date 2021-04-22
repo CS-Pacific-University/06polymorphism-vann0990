@@ -9,7 +9,7 @@ Parcel::Parcel() {
 	mWeight = 0;
 	mTravelDistance = 0;
 	mCost = 0;
-	mTravelTime = 0;
+	mTravelTime = MIN_TRAVEL_TIME;
 	bool mInsured = false;
 	bool mRushed = false;
 }
@@ -19,7 +19,9 @@ void Parcel::setCost(double cost) {
 }
 
 void Parcel::setTravelTime(double travelTime) {
-	mTravelTime = travelTime;
+	if (travelTime >= MIN_TRAVEL_TIME) {
+		mTravelTime = travelTime;
+	}
 }
 
 double Parcel::getWeight() {

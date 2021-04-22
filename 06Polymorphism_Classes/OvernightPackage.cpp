@@ -1,10 +1,11 @@
 #include "OvernightPackage.h"
 
-const double OvernightPackage::SMALL_PACKAGE_COST = 20;
-const double OvernightPackage::LARGE_PACKAGE_COST = 12;
+const double OvernightPackage::SMALL_PACKAGE_COST = 12;
+const double OvernightPackage::LARGE_PACKAGE_COST = 20;
 const int OvernightPackage::LONG_DISTANCE_TIME = 2;
 const int OvernightPackage::SHORT_DISTANCE_TIME = 1;
-const int OvernightPackage::PACKAGE_SIZE_DIVIDE = 1000;
+const int OvernightPackage::PACKAGE_SIZE_DIVIDE = 100;
+const int OvernightPackage::TRAVEL_TIME_DIVIDE = 1000;
 
 OvernightPackage::OvernightPackage() : Parcel(){
 	mVolume = 0;
@@ -12,11 +13,21 @@ OvernightPackage::OvernightPackage() : Parcel(){
 }
 
 void OvernightPackage::calculateCost() {
-
+	if (mVolume > PACKAGE_SIZE_DIVIDE) {
+		Parcel::setCost(LARGE_PACKAGE_COST);
+	}
+	else {
+		Parcel::setCost(SMALL_PACKAGE_COST);
+	}
 }
 
 void OvernightPackage::calculateTravelTime() {
-
+	if (Parcel::getDistance() > TRAVEL_TIME_DIVIDE) {
+		Parcel::setTravelTime(LONG_DISTANCE_TIME);
+	}
+	else {
+		Parcel::setTravelTime(SHORT_DISTANCE_TIME);
+	}
 }
 
 void OvernightPackage::addInsurance() {
@@ -34,6 +45,8 @@ void OvernightPackage::deliverItem(ostream& rcOut) {
 void OvernightPackage::read(istream& rcIn) {
 	Parcel::read(rcIn);
 	rcIn >> mVolume;
+	calculateCost();
+	calculateTravelTime();
 }
 
 void OvernightPackage::print(ostream& rcOut) {

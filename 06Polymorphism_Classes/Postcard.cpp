@@ -22,6 +22,8 @@ void Postcard::deliverItem(ostream& rcOut) {
 void Postcard::read(istream& rcIn) {
 	Parcel::read(rcIn);
 	rcIn >> mMessage;
+	Parcel::setCost(STARTING_COST);
+	Parcel::setTravelTime(getDistance() / DAILY_TRAVEL);
 }
 
 void Postcard::print(ostream& rcOut) {
