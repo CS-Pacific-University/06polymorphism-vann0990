@@ -32,9 +32,11 @@ void OvernightPackage::deliverItem(ostream& rcOut) {
 }
 
 void OvernightPackage::read(istream& rcIn) {
-
+	Parcel::read(rcIn);
+	rcIn >> mVolume;
 }
 
 void OvernightPackage::print(ostream& rcOut) {
-
+	Parcel::print(rcOut);
+	rcOut << "OVERNIGHT!";
 }

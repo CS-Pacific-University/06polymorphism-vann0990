@@ -3,6 +3,7 @@
 const int Parcel::MIN_TRAVEL_TIME = 0;
 
 Parcel::Parcel() {
+	mTrackingNum = 0;
 	mTo = "";
 	mFrom = "";
 	mWeight = 0;
@@ -46,9 +47,19 @@ void Parcel::deliverItem(ostream& rcOut) {
 }
 
 void Parcel::read(istream& rcIn) {
-
+	rcIn >> mTrackingNum >> mTo >> mFrom >> mWeight >> mTravelDistance;
 }
 
 void Parcel::print(ostream& rcOut) {
+	rcOut << "TID: " << mTrackingNum << "\t";
+	rcOut << "From: " << mFrom << "\t";
+	rcOut << "To: " << mTo << "\t";
 
+	if (mInsured) {
+		rcOut << "INSURED" << "\t";
+	}
+
+	if (mRushed) {
+		rcOut << "RUSH" << "\t";
+	}
 }

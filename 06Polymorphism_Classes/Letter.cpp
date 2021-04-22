@@ -19,9 +19,9 @@ void Letter::deliverItem(ostream& rcOut) {
 }
 
 void Letter::read(istream& rcIn) {
-
+	Parcel::read(rcIn);
 }
 
 void Letter::print(ostream& rcOut) {
-
+	Parcel::print(rcOut);
 }

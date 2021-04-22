@@ -20,9 +20,11 @@ void Postcard::deliverItem(ostream& rcOut) {
 }
 
 void Postcard::read(istream& rcIn) {
-
+	Parcel::read(rcIn);
+	rcIn >> mMessage;
 }
 
 void Postcard::print(ostream& rcOut) {
-
+	Parcel::print(rcOut);
+	rcOut << mMessage;
 }
