@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+#include <string>
 
 #include "Parcel.h"
 #include "Letter.h"
@@ -12,7 +13,8 @@ using namespace std;
 void readFile(istream&);
 void printMenu(string&);
 void printAllParcels();
-
+bool checkID(string);
+void addInsurance();
 
 const int MAX_PARCELS = 25;
 Parcel* apcParcel[MAX_PARCELS];
@@ -94,4 +96,22 @@ void printAllParcels() {
   for (int i = 0; i < MAX_PARCELS; i++) {
     apcParcel[i]->print(cout);
   }
+}
+
+bool checkID(string idNum) {
+  bool valid = false;
+  if (stoi(idNum) >= 0 && stoi(idNum) <= MAX_PARCELS) {
+    valid = true;
+  }
+
+  return valid;
+}
+
+void addInsurance() {
+  string idNum;
+
+  cout << "TID> ";
+  cin >> idNum;
+
+
 }
