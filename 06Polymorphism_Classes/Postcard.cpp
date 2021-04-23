@@ -8,11 +8,11 @@ Postcard::Postcard() : Parcel(){
 }
 
 void Postcard::addInsurance() {
-	mNewCost = mCost + .15;
+	mNewCost =+ mCost + .15;
 }
 
 void Postcard::rushItem() {
-	mNewCost = mNewCost + .25;
+	mNewCost =+ mNewCost + .25;
 	if (mTravelTime > MIN_TRAVEL_TIME) {
 		mTravelTime--;
 	}

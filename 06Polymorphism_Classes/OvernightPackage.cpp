@@ -12,11 +12,11 @@ OvernightPackage::OvernightPackage() : Parcel(){
 }
 
 void OvernightPackage::addInsurance() {
-	mNewCost = mCost + .25;
+	mNewCost =+ mCost + .25;
 }
 
 void OvernightPackage::rushItem() {
-	mNewCost = mCost * .75;
+	mNewCost =+ mCost * .75;
 	if (mTravelTime > MIN_TRAVEL_TIME) {
 		mTravelTime--;
 	}

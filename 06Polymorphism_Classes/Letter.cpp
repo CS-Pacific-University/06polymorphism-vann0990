@@ -7,11 +7,11 @@ Letter::Letter() : Parcel(){
 }
 
 void Letter::addInsurance() {
-	mNewCost = mCost + .45;
+	mNewCost =+ mCost + .45;
 }
 
 void Letter::rushItem() {
-	mNewCost = mCost * .10;
+	mNewCost =+ mCost * .10;
 	if (mTravelTime > MIN_TRAVEL_TIME) {
 		mTravelTime--;
 	}
