@@ -16,7 +16,7 @@ public:
 
 	virtual void addInsurance();
 	virtual void rushItem();
-	virtual void deliverItem(ostream&);
+	virtual void deliverItem(ostream&) = 0;
 
 	virtual void read(istream&);
 	virtual void print(ostream&);

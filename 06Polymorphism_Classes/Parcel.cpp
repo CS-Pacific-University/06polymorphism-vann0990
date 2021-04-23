@@ -44,10 +44,6 @@ void Parcel::rushItem() {
 
 }
 
-void Parcel::deliverItem(ostream& rcOut) {
-
-}
-
 void Parcel::read(istream& rcIn) {
 	rcIn >> mTrackingNum >> mTo >> mFrom >> mWeight >> mTravelDistance;
 }
@@ -57,11 +53,11 @@ void Parcel::print(ostream& rcOut) {
 	rcOut << "From: " << mFrom << "\t";
 	rcOut << "To: " << mTo << "\t";
 
-	if (mInsured) {
+	if (mInsured == true) {
 		rcOut << "INSURED" << "\t";
 	}
 
-	if (mRushed) {
+	if (mRushed == true) {
 		rcOut << "RUSH" << "\t";
 	}
 }
