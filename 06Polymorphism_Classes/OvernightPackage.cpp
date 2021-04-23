@@ -11,19 +11,25 @@ OvernightPackage::OvernightPackage() : Parcel(){
 	mVolume = 0;
 }
 
-void OvernightPackage::addInsurance() {
-	mNewCost =+ mCost + .25;
+void OvernightPackage::addInsurance(ostream& rcOut) {
+	Parcel::addInsurance(rcOut);
+	mNewCost += mCost + .25;
+	rcOut << "$" << mNewCost;
+	print(rcOut);
 }
 
-void OvernightPackage::rushItem() {
-	mNewCost =+ mCost * .75;
+void OvernightPackage::rushItem(ostream& rcOut) {
+	Parcel::rushItem(rcOut);
+	mNewCost += mCost * .75;
 	if (mTravelTime > MIN_TRAVEL_TIME) {
-		mTravelTime--;
+		mTravelTime = MIN_TRAVEL_TIME;
 	}
+	rcOut << "$" << mNewCost;
+	print(rcOut);
 }
 
 void OvernightPackage::deliverItem(ostream& rcOut) {
-
+	Parcel::deliverItem(rcOut);
 }
 
 void OvernightPackage::calculateCost() {

@@ -10,8 +10,8 @@ class OvernightPackage : public Parcel {
 public:
 	OvernightPackage();
 
-	virtual void addInsurance();
-	virtual void rushItem();
+	virtual void addInsurance(ostream&);
+	virtual void rushItem(ostream&);
 	virtual void deliverItem(ostream&);
 	virtual void calculateCost();
 	virtual void calculateDistance();

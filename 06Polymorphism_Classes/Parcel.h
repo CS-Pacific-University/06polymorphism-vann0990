@@ -8,8 +8,8 @@ class Parcel {
 public:
 	Parcel();
 
-	virtual void addInsurance();
-	virtual void rushItem();
+	virtual void addInsurance(ostream&);
+	virtual void rushItem(ostream&);
 	virtual void deliverItem(ostream&);
 	virtual void calculateCost() = 0;
 	virtual void calculateDistance() = 0;

@@ -10,8 +10,8 @@ class Postcard : public Parcel {
 public:
 	Postcard();
 
-	virtual void addInsurance();
-	virtual void rushItem();
+	virtual void addInsurance(ostream&);
+	virtual void rushItem(ostream&);
 	virtual void deliverItem(ostream&);
 	virtual void calculateCost();
 	virtual void calculateDistance();

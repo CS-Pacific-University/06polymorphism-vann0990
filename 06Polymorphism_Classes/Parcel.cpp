@@ -15,20 +15,20 @@ Parcel::Parcel() {
 	bool mRushed = false;
 }
 
-void Parcel::addInsurance() {
+void Parcel::addInsurance(ostream& rcOut) {
 	mInsured = true;
-	cout << "Added Insurance for ";
+	rcOut << "Added Insurance for ";
 }
 
-void Parcel::rushItem() {
+void Parcel::rushItem(ostream& rcOut) {
 	mRushed = true;
-	cout << "Added Rush for ";
+	rcOut << "Added Rush for ";
 }
 
 void Parcel::deliverItem(ostream& rcOut) {
-	cout << "Delivered!";
-	cout << mTravelTime << " Day, ";
-	cout << "$" << mCost;
+	rcOut << "Delivered!";
+	rcOut << mTravelTime << " Day, ";
+	rcOut << "$" << mCost;
 }
 
 void Parcel::read(istream& rcIn) {

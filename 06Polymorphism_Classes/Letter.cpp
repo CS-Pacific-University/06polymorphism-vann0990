@@ -6,15 +6,21 @@ const int Letter::DAILY_TRAVEL = 100;
 Letter::Letter() : Parcel(){
 }
 
-void Letter::addInsurance() {
-	mNewCost =+ mCost + .45;
+void Letter::addInsurance(ostream& rcOut) {
+	Parcel::addInsurance(rcOut);
+	mNewCost += mCost + .45;
+	rcOut << "$" << mNewCost;
+	print(rcOut);
 }
 
-void Letter::rushItem() {
-	mNewCost =+ mCost * .10;
+void Letter::rushItem(ostream& rcOut) {
+	Parcel::rushItem(rcOut);
+	mNewCost += mCost * .10;
 	if (mTravelTime > MIN_TRAVEL_TIME) {
 		mTravelTime--;
 	}
+	rcOut << "$" << mNewCost;
+	print(rcOut);
 }
 
 void Letter::deliverItem(ostream& rcOut) {
@@ -26,7 +32,7 @@ void Letter::calculateCost() {
 }
 
 void Letter::calculateDistance() {
-	mTravelTime = (getDistance() / DAILY_TRAVEL);
+	mTravelTime = (mTravelDistance / DAILY_TRAVEL);
 }
 
 void Letter::read(istream& rcIn) {

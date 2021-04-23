@@ -7,15 +7,21 @@ Postcard::Postcard() : Parcel(){
 	mMessage = "";
 }
 
-void Postcard::addInsurance() {
+void Postcard::addInsurance(ostream& rcOut) {
+	Parcel::addInsurance(rcOut);
 	mNewCost =+ mCost + .15;
+	rcOut << "$" << mNewCost;
+	print(rcOut);
 }
 
-void Postcard::rushItem() {
-	mNewCost =+ mNewCost + .25;
+void Postcard::rushItem(ostream& rcOut) {
+	Parcel::rushItem(rcOut);
+	mNewCost += mNewCost + .25;
 	if (mTravelTime > MIN_TRAVEL_TIME) {
 		mTravelTime--;
 	}
+	rcOut << "$" << mNewCost;
+	print(rcOut);
 }
 
 void Postcard::deliverItem(ostream& rcOut) {
