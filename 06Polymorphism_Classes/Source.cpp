@@ -14,7 +14,7 @@ void readFile(istream&);
 void printMenu(string&);
 void printAllParcels();
 bool checkID(string);
-void addInsurance();
+int getTID();
 
 const int MAX_PARCELS = 25;
 Parcel* apcParcel[MAX_PARCELS];
@@ -111,7 +111,7 @@ bool checkID(string idNum) {
   return valid;
 }
 
-void addInsurance() {
+int getTID() {
   string idNum;
 
   do {
@@ -119,5 +119,5 @@ void addInsurance() {
     cin >> idNum;
   } while (checkID(idNum));
 
-
+  return stoi(idNum);
 }
