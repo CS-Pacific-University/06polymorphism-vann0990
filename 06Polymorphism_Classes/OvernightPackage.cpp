@@ -12,24 +12,6 @@ OvernightPackage::OvernightPackage() : Parcel(){
 	mOriginalCost = 0;
 }
 
-void OvernightPackage::calculateCost() {
-	if (mVolume > PACKAGE_SIZE_DIVIDE) {
-		Parcel::setCost(LARGE_PACKAGE_COST);
-	}
-	else {
-		Parcel::setCost(SMALL_PACKAGE_COST);
-	}
-}
-
-void OvernightPackage::calculateTravelTime() {
-	if (Parcel::getDistance() > TRAVEL_TIME_DIVIDE) {
-		Parcel::setTravelTime(LONG_DISTANCE_TIME);
-	}
-	else {
-		Parcel::setTravelTime(SHORT_DISTANCE_TIME);
-	}
-}
-
 void OvernightPackage::addInsurance() {
 
 }
@@ -42,11 +24,29 @@ void OvernightPackage::deliverItem(ostream& rcOut) {
 
 }
 
+void OvernightPackage::calculateCost() {
+	if (mVolume > PACKAGE_SIZE_DIVIDE) {
+		Parcel::setCost(LARGE_PACKAGE_COST);
+	}
+	else {
+		Parcel::setCost(SMALL_PACKAGE_COST);
+	}
+}
+
+void OvernightPackage::calculateDistance() {
+	if (Parcel::getDistance() > TRAVEL_TIME_DIVIDE) {
+		Parcel::setTravelTime(LONG_DISTANCE_TIME);
+	}
+	else {
+		Parcel::setTravelTime(SHORT_DISTANCE_TIME);
+	}
+}
+
 void OvernightPackage::read(istream& rcIn) {
 	Parcel::read(rcIn);
 	rcIn >> mVolume;
 	calculateCost();
-	calculateTravelTime();
+	calculateDistance();
 }
 
 void OvernightPackage::print(ostream& rcOut) {

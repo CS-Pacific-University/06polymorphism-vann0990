@@ -19,11 +19,18 @@ void Postcard::deliverItem(ostream& rcOut) {
 
 }
 
+void Postcard::calculateCost() {
+	Parcel::setCost(STARTING_COST);
+}
+void Postcard::calculateDistance() {
+	Parcel::setTravelTime(getDistance() / DAILY_TRAVEL);
+}
+
 void Postcard::read(istream& rcIn) {
 	Parcel::read(rcIn);
 	rcIn >> mMessage;
-	Parcel::setCost(STARTING_COST);
-	Parcel::setTravelTime(getDistance() / DAILY_TRAVEL);
+	calculateCost();
+	calculateDistance();
 }
 
 void Postcard::print(ostream& rcOut) {

@@ -13,6 +13,8 @@ public:
 	virtual void addInsurance();
 	virtual void rushItem();
 	virtual void deliverItem(ostream&);
+	virtual void calculateCost();
+	virtual void calculateDistance();
 
 	void read(istream&);
 	void print(ostream&);

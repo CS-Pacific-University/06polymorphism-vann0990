@@ -44,6 +44,10 @@ void Parcel::rushItem() {
 
 }
 
+void Parcel::deliverItem(ostream& rcOut) {
+
+}
+
 void Parcel::read(istream& rcIn) {
 	rcIn >> mTrackingNum >> mTo >> mFrom >> mWeight >> mTravelDistance;
 }

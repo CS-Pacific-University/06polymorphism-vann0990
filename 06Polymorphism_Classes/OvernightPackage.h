@@ -9,12 +9,12 @@ using namespace std;
 class OvernightPackage : public Parcel {
 public:
 	OvernightPackage();
-	void calculateCost();
-	void calculateTravelTime();
 
 	virtual void addInsurance();
 	virtual void rushItem();
 	virtual void deliverItem(ostream&);
+	virtual void calculateCost();
+	virtual void calculateDistance();
 
 	virtual void read(istream&);
 	virtual void print(ostream&);
