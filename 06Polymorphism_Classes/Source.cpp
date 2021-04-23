@@ -11,6 +11,7 @@ using namespace std;
 
 void readFile(istream&);
 void printMenu(string&);
+void printAllParcels();
 
 
 const int MAX_PARCELS = 25;
@@ -87,4 +88,10 @@ void printMenu(string& choice) {
 
   } while (choice != OPTION_1 && choice != OPTION_2 && choice != OPTION_3
     && choice != OPTION_4 && choice != OPTION_5);
+}
+
+void printAllParcels() {
+  for (int i = 0; i < MAX_PARCELS; i++) {
+    apcParcel[i]->print(cout);
+  }
 }
