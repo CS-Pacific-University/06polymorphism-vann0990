@@ -110,8 +110,10 @@ bool checkID(string idNum) {
 void addInsurance() {
   string idNum;
 
-  cout << "TID> ";
-  cin >> idNum;
+  do {
+    cout << "TID> ";
+    cin >> idNum;
+  } while (checkID(idNum));
 
 
 }
