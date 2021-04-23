@@ -17,18 +17,18 @@ Parcel::Parcel() {
 
 void Parcel::addInsurance(ostream& rcOut) {
 	mInsured = true;
-	rcOut << "Added Insurance for ";
+	rcOut << "Added Insurance for $" << mNewCost << endl;;
 }
 
 void Parcel::rushItem(ostream& rcOut) {
 	mRushed = true;
-	rcOut << "Added Rush for ";
+	rcOut << "Added Rush for $" << mNewCost << endl;;
 }
 
 void Parcel::deliverItem(ostream& rcOut) {
-	rcOut << "Delivered!";
+	rcOut << "Delivered!\n";
 	rcOut << mTravelTime << " Day, ";
-	rcOut << "$" << mCost;
+	rcOut << "$" << mCost << endl;
 }
 
 void Parcel::read(istream& rcIn) {

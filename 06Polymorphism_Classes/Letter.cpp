@@ -7,24 +7,23 @@ Letter::Letter() : Parcel(){
 }
 
 void Letter::addInsurance(ostream& rcOut) {
-	Parcel::addInsurance(rcOut);
 	mNewCost += mCost + .45;
-	rcOut << "$" << mNewCost;
+	Parcel::addInsurance(rcOut);
 	print(rcOut);
 }
 
 void Letter::rushItem(ostream& rcOut) {
-	Parcel::rushItem(rcOut);
 	mNewCost += mCost * .10;
 	if (mTravelTime > MIN_TRAVEL_TIME) {
 		mTravelTime--;
 	}
-	rcOut << "$" << mNewCost;
+	Parcel::rushItem(rcOut);
 	print(rcOut);
 }
 
 void Letter::deliverItem(ostream& rcOut) {
-
+	Parcel::deliverItem(rcOut);
+	print(rcOut);
 }
 
 void Letter::calculateCost() {
