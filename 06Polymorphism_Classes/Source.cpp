@@ -17,7 +17,7 @@ bool checkID(string);
 int getTID();
 
 const int MAX_PARCELS = 25;
-Parcel* apcParcel[MAX_PARCELS];
+Parcel* apcParcel[MAX_PARCELS] = { nullptr };
 int gNumParcels = 0;
 
 const char LETTER = 'L';

@@ -8,11 +8,14 @@ Postcard::Postcard() : Parcel(){
 }
 
 void Postcard::addInsurance() {
-
+	mNewCost = mCost + .15;
 }
 
 void Postcard::rushItem() {
-
+	mNewCost = mNewCost + .25;
+	if (mTravelTime > MIN_TRAVEL_TIME) {
+		mTravelTime--;
+	}
 }
 
 void Postcard::deliverItem(ostream& rcOut) {
@@ -20,10 +23,10 @@ void Postcard::deliverItem(ostream& rcOut) {
 }
 
 void Postcard::calculateCost() {
-	Parcel::setCost(STARTING_COST);
+	mCost = (STARTING_COST);
 }
 void Postcard::calculateDistance() {
-	Parcel::setTravelTime(getDistance() / DAILY_TRAVEL);
+	mTravelTime = (mTravelDistance / DAILY_TRAVEL);
 }
 
 void Postcard::read(istream& rcIn) {

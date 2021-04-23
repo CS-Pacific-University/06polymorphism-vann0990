@@ -27,5 +27,4 @@ private:
 	static const int PACKAGE_SIZE_DIVIDE;
 	static const int TRAVEL_TIME_DIVIDE;
 	double mVolume;
-	double mOriginalCost;
 };

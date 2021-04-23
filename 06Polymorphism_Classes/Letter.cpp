@@ -7,11 +7,14 @@ Letter::Letter() : Parcel(){
 }
 
 void Letter::addInsurance() {
-
+	mNewCost = mCost + .45;
 }
 
 void Letter::rushItem() {
-
+	mNewCost = mCost * .10;
+	if (mTravelTime > MIN_TRAVEL_TIME) {
+		mTravelTime--;
+	}
 }
 
 void Letter::deliverItem(ostream& rcOut) {
@@ -19,11 +22,11 @@ void Letter::deliverItem(ostream& rcOut) {
 }
 
 void Letter::calculateCost() {
-	Parcel::setCost(getWeight() * COST_PER_OUNCE);
+	mCost = mWeight * COST_PER_OUNCE;
 }
 
 void Letter::calculateDistance() {
-	Parcel::setTravelTime(getDistance() / DAILY_TRAVEL);
+	mTravelTime = (getDistance() / DAILY_TRAVEL);
 }
 
 void Letter::read(istream& rcIn) {

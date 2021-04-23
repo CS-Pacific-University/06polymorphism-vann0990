@@ -9,43 +9,26 @@ Parcel::Parcel() {
 	mWeight = 0;
 	mTravelDistance = 0;
 	mCost = 0;
+	mNewCost = 0;
 	mTravelTime = MIN_TRAVEL_TIME;
 	bool mInsured = false;
 	bool mRushed = false;
 }
 
-void Parcel::setCost(double cost) {
-	mCost = cost;
-}
-
-void Parcel::setTravelTime(double travelTime) {
-	if (travelTime >= MIN_TRAVEL_TIME) {
-		mTravelTime = travelTime;
-	}
-}
-
-double Parcel::getWeight() {
-	return mWeight;
-}
-
-double Parcel::getDistance() {
-	return mTravelDistance;
-}
-
-double Parcel::getCost() {
-	return mCost;
-}
-
 void Parcel::addInsurance() {
-
+	mInsured = true;
+	cout << "Added Insurance for ";
 }
 
 void Parcel::rushItem() {
-
+	mRushed = true;
+	cout << "Added Rush for ";
 }
 
 void Parcel::deliverItem(ostream& rcOut) {
-
+	cout << "Delivered!";
+	cout << mTravelTime << " Day, ";
+	cout << "$" << mCost;
 }
 
 void Parcel::read(istream& rcIn) {

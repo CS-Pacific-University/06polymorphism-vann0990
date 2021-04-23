@@ -9,15 +9,17 @@ const int OvernightPackage::TRAVEL_TIME_DIVIDE = 1000;
 
 OvernightPackage::OvernightPackage() : Parcel(){
 	mVolume = 0;
-	mOriginalCost = 0;
 }
 
 void OvernightPackage::addInsurance() {
-
+	mNewCost = mCost + .25;
 }
 
 void OvernightPackage::rushItem() {
-
+	mNewCost = mCost * .75;
+	if (mTravelTime > MIN_TRAVEL_TIME) {
+		mTravelTime--;
+	}
 }
 
 void OvernightPackage::deliverItem(ostream& rcOut) {
@@ -26,19 +28,19 @@ void OvernightPackage::deliverItem(ostream& rcOut) {
 
 void OvernightPackage::calculateCost() {
 	if (mVolume > PACKAGE_SIZE_DIVIDE) {
-		Parcel::setCost(LARGE_PACKAGE_COST);
+		mCost = LARGE_PACKAGE_COST;
 	}
 	else {
-		Parcel::setCost(SMALL_PACKAGE_COST);
+		mCost = SMALL_PACKAGE_COST;
 	}
 }
 
 void OvernightPackage::calculateDistance() {
-	if (Parcel::getDistance() > TRAVEL_TIME_DIVIDE) {
-		Parcel::setTravelTime(LONG_DISTANCE_TIME);
+	if (mTravelDistance > TRAVEL_TIME_DIVIDE) {
+		mTravelTime = LONG_DISTANCE_TIME;
 	}
 	else {
-		Parcel::setTravelTime(SHORT_DISTANCE_TIME);
+		mTravelTime = SHORT_DISTANCE_TIME;
 	}
 }
 

@@ -7,12 +7,6 @@ using namespace std;
 class Parcel {
 public:
 	Parcel();
-	void setCost(double);
-	void setTravelTime(double);
-
-	double getWeight();
-	double getDistance();
-	double getCost();
 
 	virtual void addInsurance();
 	virtual void rushItem();
@@ -24,14 +18,17 @@ public:
 	virtual void print(ostream&);
 
 private:
-	static const int MIN_TRAVEL_TIME;
 	int mTrackingNum;
 	string mTo;
 	string mFrom;
+	bool mInsured;
+	bool mRushed;
+
+protected:
+	static const int MIN_TRAVEL_TIME;
 	double mWeight;
 	double mTravelDistance;
 	double mCost;
 	double mTravelTime;
-	bool mInsured;
-	bool mRushed;
+	double mNewCost;
 };
