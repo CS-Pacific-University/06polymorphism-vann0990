@@ -10,6 +10,7 @@
 using namespace std;
 
 void readFile(istream&);
+void printMenu(string&);
 
 
 const int MAX_PARCELS = 25;
@@ -18,11 +19,11 @@ Parcel* apcParcel[MAX_PARCELS];
 const char LETTER = 'L';
 const char POSTCARD = 'P';
 const char OVERNIGHT = 'O';
-const char OPTION_1 = '1';
-const char OPTION_2 = '2';
-const char OPTION_3 = '3';
-const char OPTION_4 = '4';
-const char OPTION_5 = '5';
+const string OPTION_1 = "1";
+const string OPTION_2 = "2";
+const string OPTION_3 = "3";
+const string OPTION_4 = "4";
+const string OPTION_5 = "5";
 
 int main() {
   ifstream inputFile;
@@ -67,4 +68,18 @@ void readFile(istream& rcIn) {
     }
   }
 
+}
+
+void printMenu(string& choice) {
+  do {
+    cout << "1.\tPrint All\n";
+    cout << "2.\tAdd Insurance\n";
+    cout << "3.\tAdd Rush\n";
+    cout << "4.\tDeliver\n";
+    cout << "5.\tAdd Rush\n";
+
+    cin >> choice;
+
+  } while (choice != OPTION_1 && choice != OPTION_2 && choice != OPTION_3
+    && choice != OPTION_4 && choice != OPTION_5);
 }
