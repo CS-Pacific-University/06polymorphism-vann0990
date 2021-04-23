@@ -15,6 +15,7 @@ void printMenu(string&);
 void printAllParcels();
 bool checkID(string);
 int getTID();
+bool checkForMail();
 
 const int MAX_PARCELS = 25;
 Parcel* apcParcel[MAX_PARCELS] = { nullptr };
@@ -42,21 +43,23 @@ int main() {
   do {
     printMenu(menuChoice);
 
+    if (false == checkForMail) {
+      break;
+    }
+    else if (menuChoice == OPTION_1) {
+      printAllParcels();
+    }
+    else if (menuChoice == OPTION_2) {
+      apcParcel[getTID()]->addInsurance(cout);
+    }
+    else if (menuChoice == OPTION_3) {
+      apcParcel[getTID()]->rushItem(cout);
+    }
+    else if (menuChoice == OPTION_4) {
+      apcParcel[getTID()]->deliverItem(cout);
+    }
+
   } while (menuChoice != OPTION_5);
-
-  if (menuChoice == OPTION_1) {
-    printAllParcels();
-  }
-  else if (menuChoice == OPTION_2) {
-
-  }
-  else if (menuChoice == OPTION_3) {
-
-  }
-  else if (menuChoice == OPTION_4) {
-
-  }
-
 
   return EXIT_SUCCESS;
 }
@@ -114,9 +117,12 @@ void printAllParcels() {
 }
 
 bool checkID(string idNum) {
-  bool valid = false;
-  if (stoi(idNum) >= 0 && stoi(idNum) <= gNumParcels) {
-    valid = true;
+  bool valid = true;
+  if (stoi(idNum) < 0 || stoi(idNum) > gNumParcels) {
+    valid = false;
+  }
+  else if (apcParcel[stoi(idNum)] == nullptr) {
+    valid = false;
   }
 
   return valid;
@@ -131,4 +137,14 @@ int getTID() {
   } while (checkID(idNum));
 
   return stoi(idNum);
+}
+
+bool checkForMail() {
+  bool mail = false;
+
+  for (int i = 0; i < gNumParcels; i++) {
+    if (apcParcel[i] != nullptr) {
+      mail = true;
+    }
+  }
 }
