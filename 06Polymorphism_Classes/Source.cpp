@@ -35,6 +35,11 @@ int main() {
 
   cout << "Mail Simulator\n";
 
+  do {
+    printMenu(menuChoice);
+
+  } while (menuChoice != OPTION_5);
+
 
 
 
