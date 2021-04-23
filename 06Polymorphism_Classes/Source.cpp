@@ -18,6 +18,7 @@ void addInsurance();
 
 const int MAX_PARCELS = 25;
 Parcel* apcParcel[MAX_PARCELS];
+int gNumParcels = 0;
 
 const char LETTER = 'L';
 const char POSTCARD = 'P';
@@ -65,14 +66,17 @@ void readFile(istream& rcIn) {
     if (parcelType == LETTER) {
       apcParcel[i] = new Letter();
       apcParcel[i]->read(rcIn);
+      gNumParcels++;
     }
     else if (parcelType == POSTCARD) {
       apcParcel[i] = new Postcard();
       apcParcel[i]->read(rcIn);
+      gNumParcels++;
     }
     else if (parcelType == OVERNIGHT) {
       apcParcel[i] = new OvernightPackage();
       apcParcel[i]->read(rcIn);
+      gNumParcels++;
     }
   }
 
@@ -93,14 +97,14 @@ void printMenu(string& choice) {
 }
 
 void printAllParcels() {
-  for (int i = 0; i < MAX_PARCELS; i++) {
+  for (int i = 0; i < gNumParcels; i++) {
     apcParcel[i]->print(cout);
   }
 }
 
 bool checkID(string idNum) {
   bool valid = false;
-  if (stoi(idNum) >= 0 && stoi(idNum) <= MAX_PARCELS) {
+  if (stoi(idNum) >= 0 && stoi(idNum) <= gNumParcels) {
     valid = true;
   }
 
