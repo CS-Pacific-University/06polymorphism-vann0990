@@ -44,7 +44,18 @@ int main() {
 
   } while (menuChoice != OPTION_5);
 
+  if (menuChoice == OPTION_1) {
+    printAllParcels();
+  }
+  else if (menuChoice == OPTION_2) {
 
+  }
+  else if (menuChoice == OPTION_3) {
+
+  }
+  else if (menuChoice == OPTION_4) {
+
+  }
 
 
   return EXIT_SUCCESS;
