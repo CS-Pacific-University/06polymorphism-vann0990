@@ -33,17 +33,18 @@ const string OPTION_5 = "5";
 int main() {
   ifstream inputFile;
   string menuChoice;
+  int TID;
 
   inputFile.open("parcels.txt");
   readFile(inputFile);
   inputFile.close();
 
-  cout << "Mail Simulator\n";
+  cout << "Mail Simulator\n\n";
 
   do {
     printMenu(menuChoice);
 
-    if (false == checkForMail) {
+    if (!checkForMail()) {
       break;
     }
     else if (menuChoice == OPTION_1) {
@@ -51,13 +52,20 @@ int main() {
     }
     else if (menuChoice == OPTION_2) {
       apcParcel[getTID()]->addInsurance(cout);
+      cout << endl;
     }
     else if (menuChoice == OPTION_3) {
       apcParcel[getTID()]->rushItem(cout);
+      cout << endl;
     }
     else if (menuChoice == OPTION_4) {
-      apcParcel[getTID()]->deliverItem(cout);
+      TID = getTID();
+      apcParcel[TID]->deliverItem(cout);
+      cout << endl;
+
+      delete apcParcel[TID];
     }
+    cout << endl;
 
   } while (menuChoice != OPTION_5);
 
@@ -98,13 +106,15 @@ void readFile(istream& rcIn) {
 
 void printMenu(string& choice) {
   do {
-    cout << "1.\tPrint All\n";
-    cout << "2.\tAdd Insurance\n";
-    cout << "3.\tAdd Rush\n";
-    cout << "4.\tDeliver\n";
-    cout << "5.\tAdd Rush\n";
+    cout << "1. Print All\n";
+    cout << "2. Add Insurance\n";
+    cout << "3. Add Rush\n";
+    cout << "4. Deliver\n";
+    cout << "5. Add Rush\n\n";
 
+    cout << "Choice> ";
     cin >> choice;
+    cout << endl;
 
   } while (choice != OPTION_1 && choice != OPTION_2 && choice != OPTION_3
     && choice != OPTION_4 && choice != OPTION_5);
@@ -113,16 +123,16 @@ void printMenu(string& choice) {
 void printAllParcels() {
   for (int i = 0; i < gNumParcels; i++) {
     apcParcel[i]->print(cout);
+    cout << endl;
   }
 }
 
 bool checkID(string idNum) {
-  bool valid = true;
-  if (stoi(idNum) < 0 || stoi(idNum) > gNumParcels) {
-    valid = false;
-  }
-  else if (apcParcel[stoi(idNum)] == nullptr) {
-    valid = false;
+  bool valid = false;
+  if (stoi(idNum) >= 0 && stoi(idNum) <= gNumParcels) {
+    if (apcParcel[stoi(idNum)] != nullptr) {
+      valid = true;
+    }
   }
 
   return valid;
@@ -134,9 +144,9 @@ int getTID() {
   do {
     cout << "TID> ";
     cin >> idNum;
-  } while (checkID(idNum));
+  } while (!checkID(idNum));
 
-  return stoi(idNum);
+  return (stoi(idNum) - 1);
 }
 
 bool checkForMail() {
@@ -147,4 +157,5 @@ bool checkForMail() {
       mail = true;
     }
   }
+  return mail;
 }
