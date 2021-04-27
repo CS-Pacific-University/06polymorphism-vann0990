@@ -6,23 +6,29 @@ const int OvernightPackage::LONG_DISTANCE_TIME = 2;
 const int OvernightPackage::SHORT_DISTANCE_TIME = 1;
 const int OvernightPackage::PACKAGE_SIZE_DIVIDE = 100;
 const int OvernightPackage::TRAVEL_TIME_DIVIDE = 1000;
+const double INSURANCE_COST = 0.25;
+const double RUSH_COST = 0.75;
 
 OvernightPackage::OvernightPackage() : Parcel(){
 	mVolume = 0;
 }
 
 void OvernightPackage::addInsurance(ostream& rcOut) {
-	mNewCost += mCost + .25;
 	Parcel::addInsurance(rcOut);
+	mCost += mCost * INSURANCE_COST;
+
+	rcOut << (mCost * INSURANCE_COST) << endl;
 	print(rcOut);
 }
 
 void OvernightPackage::rushItem(ostream& rcOut) {
-	mNewCost += mCost * .75;
+	Parcel::rushItem(rcOut);
+	mCost += mCost * RUSH_COST;
 	if (mTravelTime > MIN_TRAVEL_TIME) {
 		mTravelTime = MIN_TRAVEL_TIME;
 	}
-	Parcel::rushItem(rcOut);
+
+	rcOut << (mCost * RUSH_COST) << endl;
 	print(rcOut);
 }
 

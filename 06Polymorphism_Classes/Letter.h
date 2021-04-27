@@ -22,4 +22,6 @@ public:
 private:
 	static const double COST_PER_OUNCE;
 	static const int DAILY_TRAVEL;
+	static const double INSURANCE_COST;
+	static const double RUSH_COST;
 };

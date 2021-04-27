@@ -22,5 +22,7 @@ public:
 private:
 	static const double STARTING_COST;
 	static const int DAILY_TRAVEL;
+	static const double INSURANCE_COST;
+	static const double RUSH_COST;
 	string mMessage;
 };

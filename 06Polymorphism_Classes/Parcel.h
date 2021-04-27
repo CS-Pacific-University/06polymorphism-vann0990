@@ -21,8 +21,6 @@ private:
 	int mTrackingNum;
 	string mTo;
 	string mFrom;
-	bool mInsured;
-	bool mRushed;
 
 protected:
 	static const int MIN_TRAVEL_TIME;
@@ -30,5 +28,6 @@ protected:
 	double mTravelDistance;
 	double mCost;
 	double mTravelTime;
-	double mNewCost;
+	bool mInsured;
+	bool mRushed;
 };

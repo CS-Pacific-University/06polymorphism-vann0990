@@ -2,23 +2,29 @@
 
 const double Postcard::STARTING_COST = 0.15;
 const int Postcard::DAILY_TRAVEL = 10;
+const double INSURANCE_COST = 0.15;
+const double RUSH_COST = 0.25;
 
 Postcard::Postcard() : Parcel(){
 	mMessage = "";
 }
 
 void Postcard::addInsurance(ostream& rcOut) {
-	mNewCost =+ mCost + .15;
 	Parcel::addInsurance(rcOut);
+	mCost += INSURANCE_COST;
+
+	rcOut << INSURANCE_COST << endl;
 	print(rcOut);
 }
 
 void Postcard::rushItem(ostream& rcOut) {
-	mNewCost += mNewCost + .25;
-	if (mTravelTime > MIN_TRAVEL_TIME) {
-		mTravelTime--;
-	}
 	Parcel::rushItem(rcOut);
+	mCost += RUSH_COST;
+	if (mTravelTime > MIN_TRAVEL_TIME) {
+		mTravelTime -= 2;
+	}
+
+	rcOut << RUSH_COST << endl;
 	print(rcOut);
 }
 

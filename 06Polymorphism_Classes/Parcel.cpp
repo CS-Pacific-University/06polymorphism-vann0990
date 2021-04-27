@@ -9,7 +9,6 @@ Parcel::Parcel() {
 	mWeight = 0;
 	mTravelDistance = 0;
 	mCost = 0;
-	mNewCost = 0;
 	mTravelTime = MIN_TRAVEL_TIME;
 	bool mInsured = false;
 	bool mRushed = false;
@@ -17,12 +16,12 @@ Parcel::Parcel() {
 
 void Parcel::addInsurance(ostream& rcOut) {
 	mInsured = true;
-	rcOut << "Added Insurance for $" << mNewCost << endl;;
+	rcOut << "Added Insurance for $ ";
 }
 
 void Parcel::rushItem(ostream& rcOut) {
 	mRushed = true;
-	rcOut << "Added Rush for $" << mNewCost << endl;;
+	rcOut << "Added Rush for $ ";
 }
 
 void Parcel::deliverItem(ostream& rcOut) {

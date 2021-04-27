@@ -2,22 +2,28 @@
 
 const double Letter::COST_PER_OUNCE = 0.45;
 const int Letter::DAILY_TRAVEL = 100;
+const double INSURANCE_COST = 0.45;
+const double RUSH_COST = 0.10;
 
 Letter::Letter() : Parcel(){
 }
 
 void Letter::addInsurance(ostream& rcOut) {
-	mNewCost += mCost + .45;
 	Parcel::addInsurance(rcOut);
+	mCost += INSURANCE_COST;
+
+	rcOut << INSURANCE_COST << endl;
 	print(rcOut);
 }
 
 void Letter::rushItem(ostream& rcOut) {
-	mNewCost += mCost * .10;
+	Parcel::rushItem(rcOut);
 	if (mTravelTime > MIN_TRAVEL_TIME) {
 		mTravelTime--;
 	}
-	Parcel::rushItem(rcOut);
+	mCost += mCost * RUSH_COST;
+
+	rcOut << (mCost * RUSH_COST) << endl;
 	print(rcOut);
 }
 

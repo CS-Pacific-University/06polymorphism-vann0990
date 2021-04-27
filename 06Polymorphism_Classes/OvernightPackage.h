@@ -26,5 +26,7 @@ private:
 	static const int SHORT_DISTANCE_TIME;
 	static const int PACKAGE_SIZE_DIVIDE;
 	static const int TRAVEL_TIME_DIVIDE;
+	static const double INSURANCE_COST;
+	static const double RUSH_COST;
 	double mVolume;
 };
