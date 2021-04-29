@@ -40,6 +40,15 @@ const string OPTION_3 = "3";
 const string OPTION_4 = "4";
 const string OPTION_5 = "5";
 
+//***************************************************************************
+// Function:    main
+//
+// Description: calls on functions for the mail simulator
+//
+// Parameters:  None
+//
+// Returned:    EXIT_SUCCESS
+//***************************************************************************
 int main() {
   ifstream inputFile;
   string menuChoice;
@@ -83,6 +92,15 @@ int main() {
   return EXIT_SUCCESS;
 }
 
+//***************************************************************************
+// Function:    readFile
+//
+// Description: reads the file and sets the values of the array apcParcel
+//
+// Parameters:  rcIn - istream used to read the file
+//
+// Returned:    None
+//***************************************************************************
 void readFile(istream& rcIn) {
   char parcelType;
 
@@ -112,6 +130,15 @@ void readFile(istream& rcIn) {
 
 }
 
+//***************************************************************************
+// Function:    printMenu
+//
+// Description: prints out the menu until the user imputs a correct choice
+//
+// Parameters:  choice - the variable that stores the users choice
+//
+// Returned:    None
+//***************************************************************************
 void printMenu(string& choice) {
   do {
     cout << "1. Print All\n";
@@ -128,6 +155,15 @@ void printMenu(string& choice) {
     && choice != OPTION_4 && choice != OPTION_5);
 }
 
+//***************************************************************************
+// Function:    printAllParcels
+//
+// Description: prints out information for all valid parcels
+//
+// Parameters:  None
+//
+// Returned:    None
+//***************************************************************************
 void printAllParcels() {
   for (int i = 0; i < MAX_PARCELS; i++) {
     if (apcParcel[i] != nullptr) {
@@ -137,6 +173,15 @@ void printAllParcels() {
   }
 }
 
+//***************************************************************************
+// Function:    checkID
+//
+// Description: checks to see if the passed in idNum is valid
+//
+// Parameters:  idNum - the number that is being checked
+//
+// Returned:    true if the idNum is valid, false otherwise
+//***************************************************************************
 bool checkID(int idNum) {
   bool valid = false;
   if (idNum >= 0 && idNum <= MAX_PARCELS) {
@@ -148,6 +193,15 @@ bool checkID(int idNum) {
   return valid;
 }
 
+//***************************************************************************
+// Function:    getTID
+//
+// Description: asks for the users TID choice until it gets a valid response
+//
+// Parameters:  None
+//
+// Returned:    the valid TID number
+//***************************************************************************
 int getTID() {
   string idNum;
 
@@ -159,6 +213,16 @@ int getTID() {
   return (stoi(idNum) - 1);
 }
 
+
+//***************************************************************************
+// Function:    checkForMail
+//
+// Description: checks to see if their is any mail for the mail simulator
+//
+// Parameters:  None
+//
+// Returned:    true if there is mail, false otherwise
+//***************************************************************************
 bool checkForMail() {
   bool mail = false;
 
@@ -170,6 +234,16 @@ bool checkForMail() {
   return mail;
 }
 
+//***************************************************************************
+// Function:    deleteAllParcels
+//
+// Description: deletes all of the pointers in the array apcParcel that 
+//              haven't already been deleted
+//
+// Parameters:  None
+//
+// Returned:    None
+//***************************************************************************
 void deleteAllParcels() {
   for (int i = 0; i < MAX_PARCELS; i++) {
     if (apcParcel[i] != nullptr) {
