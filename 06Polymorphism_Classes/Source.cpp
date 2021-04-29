@@ -33,7 +33,6 @@ int main() {
   ifstream inputFile;
   string menuChoice;
   int TID;
-  cout.precision(2);
 
   inputFile.open("parcels.txt");
   readFile(inputFile);
