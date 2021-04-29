@@ -1,6 +1,6 @@
 #include "Parcel.h"
 
-const int Parcel::MIN_TRAVEL_TIME = 0;
+const int Parcel::MIN_TRAVEL_TIME = 1;
 
 Parcel::Parcel() {
 	mTrackingNum = 0;
