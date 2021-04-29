@@ -1,3 +1,13 @@
+//***************************************************************************
+// File name:    main.cpp
+// Author:       Jordan Vann
+// Date:         4/23/21
+// Class:        CS250
+// Assignment:   Polymorphism
+// Purpose:      To implement the classes in a mail simulator
+// Hours worked: 5
+//***************************************************************************
+
 #include <iostream>
 #include <fstream>
 #include <iomanip>

@@ -33,7 +33,7 @@ private:
 	string mFrom;
 
 protected:
-	static const int MIN_TRAVEL_TIME;
+	static const int MIN_TRAVEL_TIME = 1;
 	double mWeight;
 	double mTravelDistance;
 	double mCost;

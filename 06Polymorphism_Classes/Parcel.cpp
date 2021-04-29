@@ -9,8 +9,6 @@
 
 #include "Parcel.h"
 
-const int Parcel::MIN_TRAVEL_TIME = 1;
-
 
 //***************************************************************************
 // Constructor: Parcel
@@ -33,11 +31,30 @@ Parcel::Parcel() {
 	bool mRushed = false;
 }
 
+
+//***************************************************************************
+// Function:    addInsurance
+//
+// Description: Sets mInsured to true and outputs a message
+//
+// Parameters:  rcOut - ostream used to output message
+//
+// Returned:    None
+//***************************************************************************
 void Parcel::addInsurance(ostream& rcOut) {
 	mInsured = true;
 	rcOut << "Added Insurance for $";
 }
 
+//***************************************************************************
+// Function:    rushItem
+//
+// Description: Sets mrushed to true and outputs a message
+//
+// Parameters:  rcOut - ostream used to output message
+//
+// Returned:    None
+//***************************************************************************
 void Parcel::rushItem(ostream& rcOut) {
 	mRushed = true;
 	rcOut << "Added Rush for $";

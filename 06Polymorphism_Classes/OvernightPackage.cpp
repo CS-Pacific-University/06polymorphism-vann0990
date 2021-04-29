@@ -33,6 +33,17 @@ OvernightPackage::OvernightPackage() : Parcel(){
 	mVolume = 0;
 }
 
+//***************************************************************************
+// Function:    addInsurance
+//
+// Description: Adds the insurance cost to mCost and calls on the print 
+//              function and the addInsurance function in Parcel
+//
+// Parameters:  rcOut - ostream used to output a message, to call the print
+//                      function and the addInsurance function in Parcel
+//
+// Returned:    None
+//***************************************************************************
 void OvernightPackage::addInsurance(ostream& rcOut) {
 	Parcel::addInsurance(rcOut);
 	rcOut.precision(2);
@@ -42,6 +53,17 @@ void OvernightPackage::addInsurance(ostream& rcOut) {
 	print(rcOut);
 }
 
+//***************************************************************************
+// Function:    rushItem
+//
+// Description: Adds the rush cost cost to mCost and calls on the print 
+//              function, and the rushItem function in Parcel
+//
+// Parameters:  rcOut - ostream used to output a message, to call the print
+//                      function, and the rushItem function in Parcel
+//
+// Returned:    None
+//***************************************************************************
 void OvernightPackage::rushItem(ostream& rcOut) {
 	Parcel::rushItem(rcOut);
 	if (mTravelTime > MIN_TRAVEL_TIME) {
