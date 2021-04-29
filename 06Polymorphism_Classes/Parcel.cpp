@@ -41,6 +41,10 @@ void Parcel::print(ostream& rcOut) {
 	rcOut << "From: " << mFrom << "\t";
 	rcOut << "To: " << mTo << "\t";
 
+	if (mInsured == true || mRushed == true) {
+		cout << " ";
+	}
+
 	if (mInsured == true) {
 		rcOut << "INSURED" << "\t";
 	}

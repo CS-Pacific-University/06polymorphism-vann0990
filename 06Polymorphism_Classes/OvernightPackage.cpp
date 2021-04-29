@@ -67,5 +67,5 @@ void OvernightPackage::read(istream& rcIn) {
 
 void OvernightPackage::print(ostream& rcOut) {
 	Parcel::print(rcOut);
-	rcOut << "OVERNIGHT!";
+	rcOut << " OVERNIGHT!";
 }
