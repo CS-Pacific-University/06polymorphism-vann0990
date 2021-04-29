@@ -1,3 +1,13 @@
+//***************************************************************************
+// File name:  OvernightPackage.cpp
+// Author:     Jordan Vann
+// Date:       4/23/21
+// Class:      CS250
+// Assignment: Polymorphism
+// Purpose:    Implements the functions and the constructor for 
+//             OvernightPackage
+//***************************************************************************
+
 #include "OvernightPackage.h"
 
 const double OvernightPackage::SMALL_PACKAGE_COST = 12;

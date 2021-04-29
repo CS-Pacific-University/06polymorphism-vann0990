@@ -1,3 +1,12 @@
+//***************************************************************************
+// File name:  Letter.cpp
+// Author:     Jordan Vann
+// Date:       4/23/21
+// Class:      CS250
+// Assignment: Polymorphism
+// Purpose:    Implements the functions and the constructor for Letter
+//***************************************************************************
+
 #include "Letter.h"
 
 const double Letter::COST_PER_OUNCE = 0.45;

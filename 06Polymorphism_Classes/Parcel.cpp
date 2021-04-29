@@ -1,3 +1,12 @@
+//***************************************************************************
+// File name:  Parcel.cpp
+// Author:     Jordan Vann
+// Date:       4/23/21
+// Class:      CS250
+// Assignment: Polymorphism
+// Purpose:    Implements the functions and the constructor for Parcel
+//***************************************************************************
+
 #include "Parcel.h"
 
 const int Parcel::MIN_TRAVEL_TIME = 1;

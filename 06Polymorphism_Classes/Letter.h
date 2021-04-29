@@ -1,3 +1,13 @@
+//***************************************************************************
+// File name:  Letter.h
+// Author:     Jordan Vann
+// Date:       4/23/21
+// Class:      CS250
+// Assignment: Polymorphism
+// Purpose:    Declares the functions and variables for Letter
+// numbers
+//***************************************************************************
+
 #pragma once
 
 #include "Parcel.h"

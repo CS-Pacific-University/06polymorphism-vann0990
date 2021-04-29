@@ -1,3 +1,12 @@
+//***************************************************************************
+// File name:  Postcard.cpp
+// Author:     Jordan Vann
+// Date:       4/23/21
+// Class:      CS250
+// Assignment: Polymorphism
+// Purpose:    Implements the functions and the constructor for Postcard
+//***************************************************************************
+
 #include "Postcard.h"
 
 const double Postcard::STARTING_COST = 0.15;
