@@ -19,7 +19,6 @@ bool checkForMail();
 
 const int MAX_PARCELS = 25;
 Parcel* apcParcel[MAX_PARCELS] = { nullptr };
-int gNumParcels = 0;
 
 const char LETTER = 'L';
 const char POSTCARD = 'P';
@@ -62,8 +61,8 @@ int main() {
       TID = getTID();
       apcParcel[TID]->deliverItem(cout);
       cout << endl;
-
-      delete apcParcel[TID];
+      cout << TID << endl;
+      apcParcel[TID] = nullptr;
     }
     cout << endl;
 
@@ -88,17 +87,14 @@ void readFile(istream& rcIn) {
     if (parcelType == LETTER) {
       apcParcel[i] = new Letter();
       apcParcel[i]->read(rcIn);
-      gNumParcels++;
     }
     else if (parcelType == POSTCARD) {
       apcParcel[i] = new Postcard();
       apcParcel[i]->read(rcIn);
-      gNumParcels++;
     }
     else if (parcelType == OVERNIGHT) {
       apcParcel[i] = new OvernightPackage();
       apcParcel[i]->read(rcIn);
-      gNumParcels++;
     }
   }
 
@@ -110,7 +106,7 @@ void printMenu(string& choice) {
     cout << "2. Add Insurance\n";
     cout << "3. Add Rush\n";
     cout << "4. Deliver\n";
-    cout << "5. Add Rush\n\n";
+    cout << "5. Quit\n\n";
 
     cout << "Choice> ";
     cin >> choice;
@@ -121,15 +117,17 @@ void printMenu(string& choice) {
 }
 
 void printAllParcels() {
-  for (int i = 0; i < gNumParcels; i++) {
-    apcParcel[i]->print(cout);
-    cout << endl;
+  for (int i = 0; i < MAX_PARCELS; i++) {
+    if (apcParcel[i] != nullptr) {
+      apcParcel[i]->print(cout);
+      cout << endl;
+    }
   }
 }
 
 bool checkID(string idNum) {
   bool valid = false;
-  if (stoi(idNum) >= 0 && stoi(idNum) <= gNumParcels) {
+  if (stoi(idNum) >= 0 && stoi(idNum) <= MAX_PARCELS) {
     if (apcParcel[stoi(idNum)] != nullptr) {
       valid = true;
     }
@@ -152,7 +150,7 @@ int getTID() {
 bool checkForMail() {
   bool mail = false;
 
-  for (int i = 0; i < gNumParcels; i++) {
+  for (int i = 0; i < MAX_PARCELS; i++) {
     if (apcParcel[i] != nullptr) {
       mail = true;
     }

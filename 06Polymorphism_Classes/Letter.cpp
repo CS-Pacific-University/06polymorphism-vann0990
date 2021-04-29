@@ -2,8 +2,8 @@
 
 const double Letter::COST_PER_OUNCE = 0.45;
 const int Letter::DAILY_TRAVEL = 100;
-const double INSURANCE_COST = 0.45;
-const double RUSH_COST = 0.10;
+const double Letter::INSURANCE_COST = 0.45;
+const double Letter::RUSH_COST = 0.10;
 
 Letter::Letter() : Parcel(){
 }

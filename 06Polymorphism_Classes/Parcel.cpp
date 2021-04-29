@@ -16,12 +16,12 @@ Parcel::Parcel() {
 
 void Parcel::addInsurance(ostream& rcOut) {
 	mInsured = true;
-	rcOut << "Added Insurance for $ ";
+	rcOut << "Added Insurance for $";
 }
 
 void Parcel::rushItem(ostream& rcOut) {
 	mRushed = true;
-	rcOut << "Added Rush for $ ";
+	rcOut << "Added Rush for $";
 }
 
 void Parcel::deliverItem(ostream& rcOut) {

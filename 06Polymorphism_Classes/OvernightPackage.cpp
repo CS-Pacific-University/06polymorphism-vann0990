@@ -6,8 +6,8 @@ const int OvernightPackage::LONG_DISTANCE_TIME = 2;
 const int OvernightPackage::SHORT_DISTANCE_TIME = 1;
 const int OvernightPackage::PACKAGE_SIZE_DIVIDE = 100;
 const int OvernightPackage::TRAVEL_TIME_DIVIDE = 1000;
-const double INSURANCE_COST = 0.25;
-const double RUSH_COST = 0.75;
+const double OvernightPackage::INSURANCE_COST = 0.25;
+const double OvernightPackage::RUSH_COST = 0.75;
 
 OvernightPackage::OvernightPackage() : Parcel(){
 	mVolume = 0;

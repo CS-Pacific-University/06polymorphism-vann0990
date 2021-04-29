@@ -2,8 +2,8 @@
 
 const double Postcard::STARTING_COST = 0.15;
 const int Postcard::DAILY_TRAVEL = 10;
-const double INSURANCE_COST = 0.15;
-const double RUSH_COST = 0.25;
+const double Postcard::INSURANCE_COST = 0.15;
+const double Postcard::RUSH_COST = 0.25;
 
 Postcard::Postcard() : Parcel(){
 	mMessage = "";
