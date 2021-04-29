@@ -26,8 +26,10 @@ void Parcel::rushItem(ostream& rcOut) {
 
 void Parcel::deliverItem(ostream& rcOut) {
 	rcOut << "Delivered!\n";
+	rcOut.precision(0);
 	rcOut << mTravelTime << " Day, ";
-	rcOut << "$" << mCost << endl;
+	rcOut.precision(2);
+	rcOut << "$" << fixed << mCost << endl;
 }
 
 void Parcel::read(istream& rcIn) {
