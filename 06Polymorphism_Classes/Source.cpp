@@ -13,7 +13,7 @@ using namespace std;
 void readFile(istream&);
 void printMenu(string&);
 void printAllParcels();
-bool checkID(string);
+bool checkID(int);
 int getTID();
 bool checkForMail();
 
@@ -124,10 +124,10 @@ void printAllParcels() {
   }
 }
 
-bool checkID(string idNum) {
+bool checkID(int idNum) {
   bool valid = false;
-  if (stoi(idNum) >= 0 && stoi(idNum) <= MAX_PARCELS) {
-    if (apcParcel[stoi(idNum)] != nullptr) {
+  if (idNum >= 0 && idNum <= MAX_PARCELS) {
+    if (apcParcel[idNum] != nullptr) {
       valid = true;
     }
   }
@@ -141,7 +141,7 @@ int getTID() {
   do {
     cout << "TID> ";
     cin >> idNum;
-  } while (!checkID(idNum) - 1);
+  } while (!checkID(stoi(idNum) - 1));
 
   return (stoi(idNum) - 1);
 }
