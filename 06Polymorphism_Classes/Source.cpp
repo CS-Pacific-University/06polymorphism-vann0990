@@ -16,6 +16,7 @@ void printAllParcels();
 bool checkID(int);
 int getTID();
 bool checkForMail();
+void deleteAllParcels();
 
 const int MAX_PARCELS = 25;
 Parcel* apcParcel[MAX_PARCELS] = { nullptr };
@@ -67,6 +68,8 @@ int main() {
 
   } while (menuChoice != OPTION_5);
 
+  deleteAllParcels();
+ 
   return EXIT_SUCCESS;
 }
 
@@ -155,4 +158,12 @@ bool checkForMail() {
     }
   }
   return mail;
+}
+
+void deleteAllParcels() {
+  for (int i = 0; i < MAX_PARCELS; i++) {
+    if (apcParcel[i] != nullptr) {
+      delete apcParcel[i];
+    }
+  }
 }
