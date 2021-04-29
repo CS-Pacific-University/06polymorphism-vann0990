@@ -60,6 +60,17 @@ void Parcel::rushItem(ostream& rcOut) {
 	rcOut << "Added Rush for $";
 }
 
+
+//***************************************************************************
+// Function:    deliverItem
+//
+// Description: Outputs a message saying that the parcel has been delivered
+//              and the travel time and cost of the parcel
+//
+// Parameters:  rcOut - ostream used to output message
+//
+// Returned:    None
+//***************************************************************************
 void Parcel::deliverItem(ostream& rcOut) {
 	rcOut << "Delivered!\n";
 	rcOut.precision(0);
@@ -68,10 +79,30 @@ void Parcel::deliverItem(ostream& rcOut) {
 	rcOut << "$" << fixed << mCost << endl;
 }
 
+//***************************************************************************
+// Function:    read
+//
+// Description: reads in information and sets member variable equal to that 
+//              information
+//
+// Parameters:  rcIn - istream used to read in information
+//
+// Returned:    None
+//***************************************************************************
 void Parcel::read(istream& rcIn) {
 	rcIn >> mTrackingNum >> mTo >> mFrom >> mWeight >> mTravelDistance;
 }
 
+//***************************************************************************
+// Function:    print
+//
+// Description: prints out information about the Parcel using the member 
+//              variables
+//
+// Parameters:  rcOut - ostream used to print out information
+//
+// Returned:    None
+//***************************************************************************
 void Parcel::print(ostream& rcOut) {
 	rcOut << "TID: " << mTrackingNum << "\t";
 	rcOut << "From: " << mFrom << "\t";

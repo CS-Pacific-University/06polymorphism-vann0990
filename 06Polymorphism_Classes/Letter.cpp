@@ -68,15 +68,43 @@ void Letter::rushItem(ostream& rcOut) {
 	print(rcOut);
 }
 
+//***************************************************************************
+// Function:    deliverItem
+//
+// Description: Calls on the deliverItem function in Parcel, and calls on
+//              the print function
+//
+// Parameters:  rcOut - ostream used to call on the functions
+//
+// Returned:    None
+//***************************************************************************
 void Letter::deliverItem(ostream& rcOut) {
 	Parcel::deliverItem(rcOut);
 	print(rcOut);
 }
 
+//***************************************************************************
+// Function:    calculateCost
+//
+// Description: calculates and sets the value of mCost
+//
+// Parameters:  None
+//
+// Returned:    None
+//***************************************************************************
 void Letter::calculateCost() {
 	mCost = mWeight * COST_PER_OUNCE;
 }
 
+//***************************************************************************
+// Function:    calculateDistance
+//
+// Description: calculates and sets the value of mTravelDistance
+//
+// Parameters:  None
+//
+// Returned:    None
+//***************************************************************************
 void Letter::calculateDistance() {
 	mTravelTime = (mTravelDistance / DAILY_TRAVEL);
 	if (mTravelTime < MIN_TRAVEL_TIME) {
@@ -84,12 +112,32 @@ void Letter::calculateDistance() {
 	}
 }
 
+//***************************************************************************
+// Function:    read
+//
+// Description: reads in information and sets member variable equal to that 
+//              information and calls on the read function in Parcel, and 
+//              calls on calculateCost and calculateDistance
+//
+// Parameters:  rcIn - istream used to read in information
+//
+// Returned:    None
+//***************************************************************************
 void Letter::read(istream& rcIn) {
 	Parcel::read(rcIn);
 	calculateCost();
 	calculateDistance();
 }
 
+//***************************************************************************
+// Function:    print
+//
+// Description: calls on the print function in Parcel
+//
+// Parameters:  rcOut - ostream used to call on the print function
+//
+// Returned:    None
+//***************************************************************************
 void Letter::print(ostream& rcOut) {
 	Parcel::print(rcOut);
 }

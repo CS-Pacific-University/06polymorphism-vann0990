@@ -77,11 +77,30 @@ void OvernightPackage::rushItem(ostream& rcOut) {
 	print(rcOut);
 }
 
+//***************************************************************************
+// Function:    deliverItem
+//
+// Description: Calls on the deliverItem function in Parcel, and calls on
+//              the print function
+//
+// Parameters:  rcOut - ostream used to call on the functions
+//
+// Returned:    None
+//***************************************************************************
 void OvernightPackage::deliverItem(ostream& rcOut) {
 	Parcel::deliverItem(rcOut);
 	print(rcOut);
 }
 
+//***************************************************************************
+// Function:    calculateCost
+//
+// Description: calculates and sets the value of mCost
+//
+// Parameters:  None
+//
+// Returned:    None
+//***************************************************************************
 void OvernightPackage::calculateCost() {
 	if (mVolume > PACKAGE_SIZE_DIVIDE) {
 		mCost = LARGE_PACKAGE_COST;
@@ -91,6 +110,15 @@ void OvernightPackage::calculateCost() {
 	}
 }
 
+//***************************************************************************
+// Function:    calculateDistance
+//
+// Description: calculates and sets the value of mTravelDistance
+//
+// Parameters:  None
+//
+// Returned:    None
+//***************************************************************************
 void OvernightPackage::calculateDistance() {
 	if (mTravelDistance > TRAVEL_TIME_DIVIDE) {
 		mTravelTime = LONG_DISTANCE_TIME;
@@ -100,6 +128,17 @@ void OvernightPackage::calculateDistance() {
 	}
 }
 
+//***************************************************************************
+// Function:    read
+//
+// Description: reads in information and sets member variable equal to that 
+//              information and calls on the read function in Parcel, and 
+//              calls on calculateCost and calculateDistance
+//
+// Parameters:  rcIn - istream used to read in information
+//
+// Returned:    None
+//***************************************************************************
 void OvernightPackage::read(istream& rcIn) {
 	Parcel::read(rcIn);
 	rcIn >> mVolume;
@@ -107,6 +146,16 @@ void OvernightPackage::read(istream& rcIn) {
 	calculateDistance();
 }
 
+//***************************************************************************
+// Function:    print
+//
+// Description: calls on the print function in Parcel and prints out a 
+//              message
+//
+// Parameters:  rcOut - ostream used to print out information
+//
+// Returned:    None
+//***************************************************************************
 void OvernightPackage::print(ostream& rcOut) {
 	Parcel::print(rcOut);
 	rcOut << " OVERNIGHT!";
