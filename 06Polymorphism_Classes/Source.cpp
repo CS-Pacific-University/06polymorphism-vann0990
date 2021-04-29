@@ -61,7 +61,6 @@ int main() {
       TID = getTID();
       apcParcel[TID]->deliverItem(cout);
       cout << endl;
-      cout << TID << endl;
       apcParcel[TID] = nullptr;
     }
     cout << endl;
@@ -142,7 +141,7 @@ int getTID() {
   do {
     cout << "TID> ";
     cin >> idNum;
-  } while (!checkID(idNum));
+  } while (!checkID(idNum) - 1);
 
   return (stoi(idNum) - 1);
 }
