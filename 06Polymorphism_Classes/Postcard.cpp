@@ -14,6 +14,16 @@ const int Postcard::DAILY_TRAVEL = 10;
 const double Postcard::INSURANCE_COST = 0.15;
 const double Postcard::RUSH_COST = 0.25;
 
+
+//***************************************************************************
+// Constructor: Postcard
+//
+// Description: Initializes the member variables to theit default values
+//
+// Parameters:  None
+//
+// Returned:    None
+//***************************************************************************
 Postcard::Postcard() : Parcel(){
 	mMessage = "";
 }

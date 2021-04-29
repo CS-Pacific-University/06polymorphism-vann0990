@@ -14,6 +14,15 @@ const int Letter::DAILY_TRAVEL = 100;
 const double Letter::INSURANCE_COST = 0.45;
 const double Letter::RUSH_COST = 0.10;
 
+//***************************************************************************
+// Constructor: Letter
+//
+// Description: Initializes the member variables to theit default values
+//
+// Parameters:  None
+//
+// Returned:    None
+//***************************************************************************
 Letter::Letter() : Parcel(){
 }
 

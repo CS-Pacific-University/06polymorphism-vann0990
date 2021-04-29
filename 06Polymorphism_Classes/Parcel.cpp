@@ -11,6 +11,16 @@
 
 const int Parcel::MIN_TRAVEL_TIME = 1;
 
+
+//***************************************************************************
+// Constructor: Parcel
+//
+// Description: Initializes the member variables to theit default values
+//
+// Parameters:  None
+//
+// Returned:    None
+//***************************************************************************
 Parcel::Parcel() {
 	mTrackingNum = 0;
 	mTo = "";

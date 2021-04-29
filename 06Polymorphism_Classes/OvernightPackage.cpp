@@ -19,6 +19,16 @@ const int OvernightPackage::TRAVEL_TIME_DIVIDE = 1000;
 const double OvernightPackage::INSURANCE_COST = 0.25;
 const double OvernightPackage::RUSH_COST = 0.75;
 
+
+//***************************************************************************
+// Constructor: OvernightPackage
+//
+// Description: Initializes the member variables to theit default values
+//
+// Parameters:  None
+//
+// Returned:    None
+//***************************************************************************
 OvernightPackage::OvernightPackage() : Parcel(){
 	mVolume = 0;
 }
