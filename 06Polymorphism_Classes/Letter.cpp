@@ -38,6 +38,9 @@ void Letter::calculateCost() {
 
 void Letter::calculateDistance() {
 	mTravelTime = (mTravelDistance / DAILY_TRAVEL);
+	if (mTravelTime < MIN_TRAVEL_TIME) {
+		mTravelTime = MIN_TRAVEL_TIME;
+	}
 }
 
 void Letter::read(istream& rcIn) {

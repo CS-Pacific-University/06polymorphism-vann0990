@@ -38,6 +38,9 @@ void Postcard::calculateCost() {
 }
 void Postcard::calculateDistance() {
 	mTravelTime = (mTravelDistance / DAILY_TRAVEL);
+	if (mTravelTime < MIN_TRAVEL_TIME) {
+		mTravelTime = MIN_TRAVEL_TIME;
+	}
 }
 
 void Postcard::read(istream& rcIn) {
