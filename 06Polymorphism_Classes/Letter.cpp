@@ -22,6 +22,7 @@ void Letter::rushItem(ostream& rcOut) {
 		mTravelTime--;
 	}
 
+	rcOut.precision(2);
 	rcOut << fixed << (mCost * RUSH_COST) << endl;
 	mCost += (mCost * RUSH_COST);
 	print(rcOut);
