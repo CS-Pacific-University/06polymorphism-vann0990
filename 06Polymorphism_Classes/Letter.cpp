@@ -21,9 +21,9 @@ void Letter::rushItem(ostream& rcOut) {
 	if (mTravelTime > MIN_TRAVEL_TIME) {
 		mTravelTime--;
 	}
-	mCost += mCost * RUSH_COST;
 
 	rcOut << (mCost * RUSH_COST) << endl;
+	mCost += (mCost * RUSH_COST);
 	print(rcOut);
 }
 

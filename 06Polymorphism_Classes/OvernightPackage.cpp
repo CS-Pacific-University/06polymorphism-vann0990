@@ -15,20 +15,20 @@ OvernightPackage::OvernightPackage() : Parcel(){
 
 void OvernightPackage::addInsurance(ostream& rcOut) {
 	Parcel::addInsurance(rcOut);
-	mCost += mCost * INSURANCE_COST;
 
 	rcOut << (mCost * INSURANCE_COST) << endl;
+	mCost += (mCost * INSURANCE_COST);
 	print(rcOut);
 }
 
 void OvernightPackage::rushItem(ostream& rcOut) {
 	Parcel::rushItem(rcOut);
-	mCost += mCost * RUSH_COST;
 	if (mTravelTime > MIN_TRAVEL_TIME) {
 		mTravelTime = MIN_TRAVEL_TIME;
 	}
 
 	rcOut << (mCost * RUSH_COST) << endl;
+	mCost += (mCost * RUSH_COST);
 	print(rcOut);
 }
 
