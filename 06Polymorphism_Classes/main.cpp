@@ -202,11 +202,12 @@ bool checkID(int idNum) {
 //***************************************************************************
 // Function:    getTID
 //
-// Description: asks for the users TID choice until it gets a valid response
+// Description: asks for the users TID choice and returns the number to use 
+//              for the array
 //
 // Parameters:  None
 //
-// Returned:    the valid TID number
+// Returned:    the TID number that can be used with the array
 //***************************************************************************
 int getTID() {
   string idNum;
