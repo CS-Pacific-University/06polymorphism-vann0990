@@ -69,22 +69,28 @@ int main() {
     else if (menuChoice == OPTION_1) {
       printAllParcels();
     }
-    else if (menuChoice == OPTION_2) {
-      apcParcel[getTID()]->addInsurance(cout);
-      cout << endl;
-    }
-    else if (menuChoice == OPTION_3) {
-      apcParcel[getTID()]->rushItem(cout);
-      cout << endl;
-    }
-    else if (menuChoice == OPTION_4) {
-      TID = getTID();
-      apcParcel[TID]->deliverItem(cout);
-      cout << endl;
-      apcParcel[TID] = nullptr;
-    }
-    cout << endl;
+    else if (menuChoice == OPTION_5) {
 
+    }
+    else {
+      TID = getTID();
+      if (checkID(TID) == true) {
+        if (menuChoice == OPTION_2) {
+          apcParcel[TID]->addInsurance(cout);
+        }
+        else if (menuChoice == OPTION_3) {
+          apcParcel[TID]->rushItem(cout);
+        }
+        else if (menuChoice == OPTION_4) {
+          apcParcel[TID]->deliverItem(cout);
+          apcParcel[TID] = nullptr;
+
+        }
+        cout << endl;
+      }
+    }
+
+    cout << endl;
   } while (menuChoice != OPTION_5);
 
   deleteAllParcels();
@@ -204,11 +210,8 @@ bool checkID(int idNum) {
 //***************************************************************************
 int getTID() {
   string idNum;
-
-  do {
     cout << "TID> ";
     cin >> idNum;
-  } while (!checkID(stoi(idNum) - 1));
 
   return (stoi(idNum) - 1);
 }
