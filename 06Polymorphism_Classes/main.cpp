@@ -61,12 +61,16 @@ int main() {
   cout << "Mail Simulator\n\n";
 
   do {
-    printMenu(menuChoice);
 
-    if (!checkForMail()) {
+    if (false == checkForMail()) {
+      cout << "There is no mail to be delivered.";
       break;
     }
-    else if (menuChoice == OPTION_1) {
+    else {
+      printMenu(menuChoice);
+    }
+
+    if (menuChoice == OPTION_1) {
       printAllParcels();
     }
     else if (menuChoice == OPTION_5) {
@@ -91,7 +95,7 @@ int main() {
     }
 
     cout << endl;
-  } while (menuChoice != OPTION_5);
+  } while (menuChoice != OPTION_5 && true == checkForMail());
 
   deleteAllParcels();
  
